@@ -1,16 +1,29 @@
 import { StyleSheet, Text, View } from 'react-native'
 import React from 'react'
 import { SafeAreaView } from 'react-native-safe-area-context'
-import ImageBg from '../../components/Image'
+import Bg from '@/assets/svg/bg'
 
 const Map = () => {
   return (
-    <SafeAreaView style={{flex:1}}>
-      <ImageBg/>
-    </SafeAreaView>
+    <SafeAreaView style={styles.screen}>
+      
+      <Bg style={styles.bg} />
+
+    </SafeAreaView >
   )
 }
 
 export default Map
 
-const styles = StyleSheet.create({})
+const styles = StyleSheet.create({
+  screen: {
+    flex: 1,
+    backgroundColor: "#242C3B"
+  },
+  bg: {
+    position: "absolute",
+    bottom: -20,
+    width: "100%",
+    height: "100%"
+  }, 
+})
