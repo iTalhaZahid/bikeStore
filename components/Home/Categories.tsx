@@ -5,6 +5,8 @@ import SmallCycle from "../../assets/svg/SmallCycle";
 import Road from "../../assets/svg/Road";
 import Triangle from "../../assets/svg/Triangle";
 import Helmet from "../../assets/svg/SmallHelmet";
+import * as Haptics from 'expo-haptics';
+import { PressableScale } from 'pressto';
 
 type CategoryKey = "all" | "second" | "first" | "third" | "forth";
 
@@ -16,45 +18,45 @@ type Props = {
 const Categories = ({ selected, onChange }: Props) => {
   return (
     <View style={styles.container}>
-      <Pressable
-        onPress={() => onChange("all")}
+      <PressableScale
+        onPress={() => {onChange("all"); Haptics.impactAsync(Haptics.ImpactFeedbackStyle.Light)}}
         style={[styles.buttons, { position: "absolute", bottom: 0 }, selected === "all" && styles.active]}
       >
         <Text style={{ color: "#fff", fontWeight: "500", fontSize: 16 }}>All</Text>
-      </Pressable>
+      </PressableScale>
 
-      <Pressable
-        onPress={() => onChange("second")}
+      <PressableScale
+        onPress={() => {onChange("second"); Haptics.impactAsync(Haptics.ImpactFeedbackStyle.Light)}}
         style={[styles.buttons, { position: "absolute", bottom: 14, left: "20%" }, selected === "second" && styles.active]}
       >
         {/* <Image source={require("../../assets/images/Second.png")} contentFit="contain" style={styles.icon} /> */}
         < SmallCycle width={40} height={40} />
-      </Pressable>
+      </PressableScale>
 
-      <Pressable
-        onPress={() => onChange("first")}
+      <PressableScale
+        onPress={() => {onChange("first"); Haptics.impactAsync(Haptics.ImpactFeedbackStyle.Light)}}
         style={[styles.buttons, { position: "absolute", bottom: 28, left: "40%" }, selected === "first" && styles.active]}
       >
         {/* <Image source={require("../../assets/images/First.png")} contentFit="contain" style={styles.icon} /> */}
         <Road width={40} height={40} />
-      </Pressable>
+      </PressableScale>
 
-      <Pressable
-        onPress={() => onChange("third")}
+      <PressableScale
+        onPress={() => {onChange("third"); Haptics.impactAsync(Haptics.ImpactFeedbackStyle.Light)}}
         style={[styles.buttons, { position: "absolute", bottom: 42, left: "60%" }, selected === "third" && styles.active]}
       >
         {/* <Image source={require("../../assets/images/Third.png")} contentFit="contain" style={styles.icon} /> */}
         <Triangle width={40} height={40} />
-      </Pressable>
+      </PressableScale>
 
 
-      <Pressable
-        onPress={() => onChange("forth")}
+      <PressableScale
+        onPress={() => {onChange("forth"); Haptics.impactAsync(Haptics.ImpactFeedbackStyle.Light)}}
         style={[styles.buttons, { position: "absolute", bottom: 56, left: "80%" }, selected === "forth" && styles.active]}
       >
         <Helmet width={40} height={40} />
         {/* <Image source={require("../../assets/images/Forth.png")} contentFit="contain" style={styles.icon} /> */}
-      </Pressable>
+      </PressableScale>
     </View>
   );
 };

@@ -1,16 +1,18 @@
 import { Pressable, StyleSheet, Text, View } from 'react-native'
 import React from 'react'
 import Feather from '@expo/vector-icons/Feather';
+import * as Haptics from 'expo-haptics';
+import { PressableScale  } from 'pressto';
 
 const TopBar = () => {
     return (
         <View style={styles.row}>
             <Text style={styles.topText}>Choose Your Bike</Text>
-            <Pressable
+            <PressableScale  onPress={() => { Haptics.impactAsync(Haptics.ImpactFeedbackStyle.Light) }}
                 style={{ backgroundColor: '#34C8E8', padding: 8, borderRadius: 12 }}
             >
                 <Feather name="search" size={24} color="#FFFFFF" />
-            </Pressable>
+            </PressableScale>
         </View>
     )
 }
