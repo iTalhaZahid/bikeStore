@@ -9,7 +9,7 @@ const MainCard = () => {
         <View style={styles.container}>
             <MainCardSvg
                 title="30% Off"
-                imageHref={require("../../assets/images/MainCardBicycle.png")}
+                imageHref={require("../../assets/images/MainCycle.png")}
                 // SvgContent={MainCardCycle }
             />
 
@@ -24,11 +24,4 @@ const styles = StyleSheet.create({
         width: "100%",   // set your size
         height: 250,
     },
-    text: {
-        position: 'absolute',
-        color: '#FFFFFF',
-        zIndex: 99,
-        top: 20,
-        left: 20,
-    }
 })
